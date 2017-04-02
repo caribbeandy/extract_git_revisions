@@ -1,10 +1,9 @@
 #!/bin/bash
 
-	#beforeDate="Jan 1 2012"
-	#afterDate="Jan 1 2013"
-
+    ######## EDIT THESE ##########
     mainDir="/home/a9palmer/iclones_test"
     dates=( "Jan 1 2012" "May 6 2012" )
+    #############################
 
     rm ${mainDir}/failed.txt > /dev/null 2>&1
     rm ${mainDir}/succeeded.txt > /dev/null 2>&1
