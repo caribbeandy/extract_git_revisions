@@ -1,15 +1,15 @@
 #/bin/bash
 
-	beforeDate="Jan 1 2014"
-	afterDate="Jan 1 2016"
+	beforeDate="Jan 1 2012"
+	afterDate="Jan 1 2013"
 
-    mainDir="/home/a9palmer/projects_test/"
+    mainDir="/home/a9palmer/iclones_test"
 
     rm ${mainDir}/failed.txt 
     rm ${mainDir}/succeeded.txt 
 
 	## for each repository
-	for repoName in `find . -maxdepth 1 -mindepth 1 -type d -printf '%f\n'` ; do
+	for repoName in `find ${mainDir} -maxdepth 1 -mindepth 1 -type d -printf '%f\n'` ; do
 
         cd $mainDir
 
