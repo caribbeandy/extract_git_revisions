@@ -4,7 +4,7 @@
 	#afterDate="Jan 1 2013"
 
     mainDir="/home/a9palmer/iclones_test"
-    dates=( "Jan 1 2012" )
+    dates=( "Jan 1 2012" "May 6 2012" )
 
     rm ${mainDir}/failed.txt > /dev/null 2>&1
     rm ${mainDir}/succeeded.txt > /dev/null 2>&1
@@ -33,15 +33,22 @@
         for date in "${dates[@]}"
         do
 
+            cd $mainDir
+
+            # cd into directory
+            cd $repoName 
+
             # create dir for the date and copy everything into it
-            mkdir "${date}"
+            revDirName=rev_${i}_${date}
+            mkdir "${revDirName}"
+
             cd $origFolder
 
-            cp -rf .[a-zA-Z0-9]* ../"${date}"
-            cp -rf * ../"${date}"/
+            cp -rf .[a-zA-Z0-9]* ../"${revDirName}"
+            cp -rf * "../${revDirName}/"
 
             # go to date dir and check for the snapshot
-            cd ../"${date}"
+            cd "../${revDirName}"
             git rev-list -1 --before="${date}" master > rev_"${date}".txt
 
             ### TODO: Also need to account for initial commits
