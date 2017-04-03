@@ -1,14 +1,23 @@
 #!/bin/bash
 
     ######## EDIT THESE ##########
-    mainDir="/home/a9palmer/iclones_test"
-    dates=( "Jan 1 2012" "May 6 2012" )
+    mainDir="/home/srahbari/Desktop/guava"
+    dates=(
+	"Jan 1 2011" "Feb 1 2011" "March 1 2011" "April 1 2011" "May 1 2011" "June 1 2011" "July 1 2011" "Aug 1 2011" "Sept 1 2011" "Oct 1 2011" "Nov 1 2011" "Dec 1 2011"
+	"Jan 1 2012" "Feb 1 2012" "March 1 2012" "April 1 2012" "May 1 2012" "June 1 2012" "July 1 2012" "Aug 1 2012" "Sept 1 2012" "Oct 1 2012" "Nov 1 2012" "Dec 1 2012"
+	"Jan 1 2013" "Feb 1 2013" "March 1 2013" "April 1 2013" "May 1 2013" "June 1 2013" "July 1 2013" "Aug 1 2013" "Sept 1 2013" "Oct 1 2013" "Nov 1 2013" "Dec 1 2013"
+	"Jan 1 2014" "Feb 1 2014" "March 1 2014" "April 1 2014" "May 1 2014" "June 1 2014" "July 1 2014" "Aug 1 2014" "Sept 1 2014" "Oct 1 2014" "Nov 1 2014" "Dec 1 2014"
+	"Jan 1 2015" "Feb 1 2015" "March 1 2015" "April 1 2015" "May 1 2015" "June 1 2015" "July 1 2015" "Aug 1 2015" "Sept 1 2015" "Oct 1 2015" "Nov 1 2015" "Dec 1 2015"
+	"Jan 1 2016" "Feb 1 2016" "March 1 2016" "April 1 2016" "May 1 2016" "June 1 2016" "July 1 2016" "Aug 1 2016" "Sept 1 2016" "Oct 1 2016" "Nov 1 2016" "Dec 1 2016"
+	"Jan 1 2017"
+    )
+
     #############################
 
     rm ${mainDir}/failed.txt > /dev/null 2>&1
     rm ${mainDir}/succeeded.txt > /dev/null 2>&1
 
-    i=0
+    i=100
 
 	## for each repository
 	for repoName in `find ${mainDir} -maxdepth 1 -mindepth 1 -type d -printf '%f\n'` ; do
