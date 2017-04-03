@@ -9,6 +9,7 @@
     rm ${mainDir}/succeeded.txt > /dev/null 2>&1
 
     i=0
+
 	## for each repository
 	for repoName in `find ${mainDir} -maxdepth 1 -mindepth 1 -type d -printf '%f\n'` ; do
 
@@ -21,11 +22,14 @@
 
         origFolder="${repoName}_original"
 
-        # move everything into the newest dir
-        mkdir $origFolder
-        mv .[a-zA-Z0-9]* $origFolder > /dev/null 2>&1
-        mv * $origFolder > /dev/null 2>&1
-        #todo: change to move ****
+        # if we already did this once
+
+        if [ ! -d "$origFolder" ]; then
+            # move everything into the newest dir
+            mkdir $origFolder
+            mv .[a-zA-Z0-9]* $origFolder > /dev/null 2>&1
+            mv * $origFolder > /dev/null 2>&1
+        fi
 
         ## end preparation
 
