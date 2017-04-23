@@ -1,6 +1,6 @@
 #!/bin/sh
 
 while read p; do
-  cd projects
+  cd google_projects
   nohup git clone $p &
-done <~/projects.txt
+done <google_github_projects.txt

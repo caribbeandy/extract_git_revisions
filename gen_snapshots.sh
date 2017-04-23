@@ -1,7 +1,8 @@
 #!/bin/bash
 
     ######## EDIT THESE ##########
-    mainDir="/home/srahbari/Desktop/guava"
+    mainDir="MAIN_DIR"
+
     dates=(
 	"Jan 1 2011" "Feb 1 2011" "March 1 2011" "April 1 2011" "May 1 2011" "June 1 2011" "July 1 2011" "Aug 1 2011" "Sept 1 2011" "Oct 1 2011" "Nov 1 2011" "Dec 1 2011"
 	"Jan 1 2012" "Feb 1 2012" "March 1 2012" "April 1 2012" "May 1 2012" "June 1 2012" "July 1 2012" "Aug 1 2012" "Sept 1 2012" "Oct 1 2012" "Nov 1 2012" "Dec 1 2012"
@@ -21,8 +22,6 @@
 
 	## for each repository
 	for repoName in `find ${mainDir} -maxdepth 1 -mindepth 1 -type d -printf '%f\n'` ; do
-
-        #### Preparation
 
         cd $mainDir
 

@@ -1,3 +1,0 @@
-Edit these variables at the top of gen_snapshots.sh:
-    mainDir="/home/a9palmer/iclones_test"
-    dates=( "Jan 1 2012" "May 6 2012" )
